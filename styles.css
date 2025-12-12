@@ -1,0 +1,272 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo i {
+    font-size: 2rem;
+    color: #764ba2;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.logo span {
+    color: #667eea;
+}
+
+nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+nav a:hover {
+    background: #667eea;
+    color: white;
+}
+
+.btn-panel {
+    background: #764ba2;
+    color: white !important;
+}
+
+/* Sección de Tarjetas */
+.tarjetas-section {
+    background: white;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 15px;
+    max-width: 1200px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.tarjetas-section h2 {
+    color: #333;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tarjetas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.tarjeta {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border-left: 5px solid #667eea;
+    transition: transform 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+}
+
+.tarjeta h3 {
+    color: #764ba2;
+    margin-bottom: 1rem;
+}
+
+.vinetas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.vineta {
+    text-align: center;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.vineta .icono {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.vineta h4 {
+    color: #667eea;
+    margin-bottom: 0.3rem;
+}
+
+.vineta p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Sección de Afiliación */
+.afiliacion-section {
+    background: white;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 15px;
+    max-width: 1200px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.afiliacion-section h2 {
+    color: #333;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #667eea;
+    outline: none;
+}
+
+.btn-afiliate {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    font-weight: 600;
+    transition: transform 0.3s;
+}
+
+.btn-afiliate:hover {
+    transform: scale(1.05);
+}
+
+.beneficios {
+    background: #f0f4ff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 5px solid #667eea;
+}
+
+.beneficios h3 {
+    color: #764ba2;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.beneficios ul {
+    list-style: none;
+}
+
+.beneficios li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.beneficios i.fa-check-circle {
+    color: #4CAF50;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: white;
+    background: rgba(0,0,0,0.2);
+    margin-top: 2rem;
+}
+
+footer a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .form-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .vinetas {
+        grid-template-columns: 1fr;
+    }
+}
