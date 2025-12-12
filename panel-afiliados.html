@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Afiliados</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .panel-container {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+        
+        .panel-header {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .stat-card i {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-card h3 {
+            font-size: 2rem;
+            color: #333;
+            margin: 0.5rem 0;
+        }
+        
+        .afiliados-table {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th {
+            background: #667eea;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+        
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .badge {
+            background: #e0f7fa;
+            color: #006064;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .btn-volver {
+            display: inline-block;
+            background: #764ba2;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-chart-network"></i>
+            <h1>Panel de <span>Afiliados</span></h1>
+        </div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="#mi-red">Mi Red</a>
+            <a href="#comisiones">Comisiones</a>
+            <a href="#config">Configuración</a>
+        </nav>
+    </header>
+
+    <div class="panel-container">
+        <div class="panel-header">
+            <div>
+                <h2><i class="fas fa-user-shield"></i> Panel de Control</h2>
+                <p>Gestiona tu red de afiliados y comisiones</p>
+            </div>
+            <div id="user-info">
+                <!-- Se llena con JavaScript -->
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <i class="fas fa-users"></i>
+                <h3 id="total-afiliados">0</h3>
+                <p>Afiliados Totales</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-sitemap"></i>
+                <h3 id="mi-red-count">0</h3>
+                <p>En Mi Red</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-coins"></i>
+                <h3>$<span id="comisiones-totales">0</span></h3>
+                <p>Comisiones Totales</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-calendar-check"></i>
+                <h3 id="afiliados-hoy">0</h3>
+                <p>Nuevos Hoy</p>
+            </div>
+        </div>
+
+        <h3><i class="fas fa-list"></i> Lista de Afiliados</h3>
+        <div class="afiliados-table">
+            <table id="tabla-afiliados">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Teléfono</th>
+                        <th>Patrocinador</th>
+                        <th>Fecha</th>
+                        <th>Nivel</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Se llena con JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <a href="index.html" class="btn-volver">
+            <i class="fas fa-arrow-left"></i> Volver al Sitio Principal
+        </a>
+    </div>
+
+    <script>
+        // Cargar datos del panel
+        document.addEventListener('DOMContentLoaded', function() {
+            const afiliados = JSON.parse(localStorage.getItem('afiliados')) || [];
+            const tabla = document.getElementById('tabla-afiliados').getElementsByTagName('tbody')[0];
+            
+            // Actualizar estadísticas
+            document.getElementById('total-afiliados').textContent = afiliados.length;
+            document.getElementById('mi-red-count').textContent = afiliados.filter(a => a.patrocinador === 'A001').length;
+            document.getElementById('comisiones-totales').textContent = (afiliados.length * 29.99).toFixed(2);
+            
+            // Filtrar afiliados de hoy (simulado)
+            const hoy = new Date().toISOString().split('T')[0];
+            const hoyCount = afiliados.filter(a => a.fecha === hoy).length;
+            document.getElementById('afiliados-hoy').textContent = hoyCount;
+            
+            // Mostrar usuario actual
+            const urlParams = new URLSearchParams(window.location.search);
+            const userId = urlParams.get('id') || 'A001';
+            const usuario = afiliados.find(a => a.id === userId) || afiliados[0];
+            
+            document.getElementById('user-info').innerHTML = `
+                <h3>${usuario.nombre}</h3>
+                <p><strong>ID:</strong> ${usuario.id} | <strong>Nivel:</strong> ${usuario.nivel}</p>
+            `;
+            
+            // Llenar tabla
+            tabla.innerHTML = '';
+            afiliados.forEach(afiliado => {
+                const fila = tabla.insertRow();
+                fila.innerHTML = `
+                    <td><span class="badge">${afiliado.id}</span></td>
+                    <td>${afiliado.nombre}</td>
+                    <td>${afiliado.email}</td>
+                    <td>${afiliado.telefono}</td>
+                    <td>${afiliado.patrocinador || 'Directo'}</td>
+                    <td>${afiliado.fecha}</td>
+                    <td><span class="badge">Nivel ${afiliado.nivel}</span></td>
+                `;
+            });
+        });
+    </script>
+</body>
+</html>
