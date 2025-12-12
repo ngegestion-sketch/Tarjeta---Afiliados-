@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjetas Inteligentes + Sistema de Afiliados</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <i class="fas fa-cards"></i>
+            <h1>Tarjetas<span>Pro</span></h1>
+        </div>
+        <nav>
+            <a href="#tarjetas">Tarjetas</a>
+            <a href="#afiliate">Afíliate</a>
+            <a href="panel-afiliados.html" class="btn-panel">Panel Afiliados</a>
+        </nav>
+    </header>
+
+    <!-- Sección de Tarjetas (Ejemplo simple) -->
+    <section id="tarjetas" class="tarjetas-section">
+        <h2><i class="fas fa-id-card"></i> Nuestras Tarjetas Narrativas</h2>
+        <div class="tarjetas-container">
+            <!-- Tarjeta 1 - 4 viñetas simples -->
+            <div class="tarjeta">
+                <h3>Historia de Éxito</h3>
+                <div class="vinetas">
+                    <div class="vineta">
+                        <div class="icono">🔑</div>
+                        <h4>Problema</h4>
+                        <p>Olvidaba siempre sus claves y documentos</p>
+                    </div>
+                    <div class="vineta">
+                        <div class="icono">💡</div>
+                        <h4>Solución</h4>
+                        <p>Creó un sistema de tarjetas digitales</p>
+                    </div>
+                    <div class="vineta">
+                        <div class="icono">🚀</div>
+                        <h4>Implementación</h4>
+                        <p>Organizó todo en 4 tarjetas maestras</p>
+                    </div>
+                    <div class="vineta">
+                        <div class="icono">🏆</div>
+                        <h4>Resultado</h4>
+                        <p>Ahora vive organizado y sin estrés</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="tarjeta">
+                <h3>Fidelización de Clientes</h3>
+                <div class="vinetas">
+                    <div class="vineta">
+                        <div class="icono">📉</div>
+                        <h4>Antes</h4>
+                        <p>Clientes no regresaban</p>
+                    </div>
+                    <div class="vineta">
+                        <div class="icono">🎴</div>
+                        <h4>Tarjetas</h4>
+                        <p>Sistema de seguimiento con tarjetas</p>
+                    </div>
+                    <div class="vineta">
+                        <div class="icono">📈</div>
+                        <h4>Resultado</h4>
+                        <p>70% más de clientes recurrentes</p>
+                    </div>
+                    <div class="vineta">
+                        <div class="icono">💰</div>
+                        <h4>Ganancias</h4>
+                        <p>Ingresos aumentaron 3x</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Afiliación -->
+    <section id="afiliate" class="afiliacion-section">
+        <h2><i class="fas fa-user-plus"></i> Únete como Afiliado</h2>
+        <p>Regístrate y comienza a ganar comisiones por cada persona que afilies</p>
+        
+        <div class="form-container">
+            <form id="form-afiliacion">
+                <div class="input-group">
+                    <label for="nombre"><i class="fas fa-user"></i> Nombre completo</label>
+                    <input type="text" id="nombre" required placeholder="Tu nombre">
+                </div>
+                
+                <div class="input-group">
+                    <label for="email"><i class="fas fa-envelope"></i> Correo electrónico</label>
+                    <input type="email" id="email" required placeholder="tucorreo@ejemplo.com">
+                </div>
+                
+                <div class="input-group">
+                    <label for="telefono"><i class="fas fa-phone"></i> Teléfono</label>
+                    <input type="tel" id="telefono" placeholder="+57 300 123 4567">
+                </div>
+                
+                <div class="input-group">
+                    <label for="patrocinador"><i class="fas fa-users"></i> ID de Patrocinador (opcional)</label>
+                    <input type="text" id="patrocinador" placeholder="Ej: A001">
+                </div>
+                
+                <button type="submit" class="btn-afiliate">
+                    <i class="fas fa-rocket"></i> Afiliarme Ahora
+                </button>
+            </form>
+            
+            <div class="beneficios">
+                <h3><i class="fas fa-gift"></i> Beneficios:</h3>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Acceso a todas las tarjetas digitales</li>
+                    <li><i class="fas fa-check-circle"></i> Comisión del 30% por cada afiliado</li>
+                    <li><i class="fas fa-check-circle"></i> Panel de control personal</li>
+                    <li><i class="fas fa-check-circle"></i> Soporte 24/7</li>
+                    <li><i class="fas fa-check-circle"></i> Sin cuotas mensuales</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 TarjetasPro | Sistema de Afiliados | <a href="panel-afiliados.html">Ver Panel</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
